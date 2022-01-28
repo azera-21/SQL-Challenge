@@ -27,6 +27,20 @@ USE movielens;
 -- AND ratings.rating = 5
 -- AND occupations.name = 'student';
 
+#4
+-- SELECT title FROM movies 
+-- WHERE release_date =(
+-- 	SELECT release_date FROM movies
+-- 	GROUP BY release_date ORDER BY COUNT(release_date) DESC 
+-- 	LIMIT 1
+-- );
+
+#5
+-- SELECT genres.`name`, COUNT(movies.title) FROM genres_movies
+-- JOIN movies ON genres_movies.movie_id = movies.id
+-- JOIN genres ON genres_movies.genre_id = genres.id
+-- GROUP BY genres.`name`
+-- ORDER BY count(movies.title) ASC;
 
 
 
