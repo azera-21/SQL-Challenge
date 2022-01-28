@@ -31,12 +31,25 @@ USE sakila;
 -- INNER JOIN actor ON film_actor.actor_id = actor.actor_id
 -- GROUP BY film_actor.actor_id
 -- ORDER BY COUNT(film_actor.actor_id) DESC LIMIT 1;
-#14 DIDN'T FINISH
+#14 
+-- ORIGINAL ATTEMPT
 -- SELECT * FROM film f
 -- JOIN inventory i ON f.film_id=i.film_id
 -- JOIN store st ON i.store_id=st.store_id
 -- JOIN customer cu ON st.store_id=cu.store_id
 -- JOIN rental r ON cu.customer_id=r.customer_id;
+-- UPDATED ATTEMPT
+-- SELECT title, rental_date, return_date, rental_duration FROM film 
+-- JOIN inventory ON film.film_id = inventory.film_id
+-- JOIN rental ON inventory.inventory_id = rental.inventory_id
+-- WHERE film.title = "academy dinosaur"
+-- AND rental.return_date IS NULL;
+-- ANOTHER WAY
+-- SELECT title, DATE_ADD(rental_date, INTERVAL rental_duration DAY) AS date_due FROM film 
+-- JOIN inventory ON film.film_id = inventory.film_id
+-- JOIN rental ON inventory.inventory_id = rental.inventory_id
+-- WHERE film.title = "academy dinosaur"
+-- AND rental.return_date IS NULL;
 #15 
 -- SELECT AVG(length) FROM film; 
 #16 
@@ -55,10 +68,10 @@ USE sakila;
 #20
 -- SELECT first_name, last_name FROM staff WHERE staff_id = 2;
 #21
--- SELECT title FROM film fi
--- JOIN film_actor fa ON fi.film_id=fa.film_id
--- JOIN actor a ON fa.actor_id=a.actor_id
--- WHERE first_name = 'Fred' AND last_name = 'Costner';
+SELECT title FROM film fi
+JOIN film_actor fa ON fi.film_id=fa.film_id
+JOIN actor a ON fa.actor_id=a.actor_id
+WHERE first_name = 'Fred' AND last_name = 'Costner';
 #22
 -- SELECT COUNT(DISTINCT country) FROM country;
 #23
