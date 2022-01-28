@@ -21,7 +21,7 @@ USE world;
 -- JOIN city ci ON co.`code`=ci.CountryCode
 -- WHERE `Code`='CHN';
 #8
--- SELECT `Name` AS country_with_lowest_population, population FROM country WHERE Population IS NOT NULL ORDER BY Population ASC LIMIT 1;
+-- SELECT `Name` AS country_with_lowest_population, population FROM country WHERE Population IS NOT NULL AND population > 0 ORDER BY Population ASC LIMIT 1;
 #9
 -- SELECT COUNT(DISTINCT`name`) AS number_of_countries_in_database FROM country;
 #10

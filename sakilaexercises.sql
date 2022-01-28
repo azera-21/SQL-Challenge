@@ -68,10 +68,10 @@ USE sakila;
 #20
 -- SELECT first_name, last_name FROM staff WHERE staff_id = 2;
 #21
-SELECT title FROM film fi
-JOIN film_actor fa ON fi.film_id=fa.film_id
-JOIN actor a ON fa.actor_id=a.actor_id
-WHERE first_name = 'Fred' AND last_name = 'Costner';
+-- SELECT CONCAT(first_name, ' ', last_name) AS 'Full Name', title FROM film fi
+-- JOIN film_actor fa ON fi.film_id=fa.film_id
+-- JOIN actor a ON fa.actor_id=a.actor_id
+-- WHERE first_name = 'Fred' AND last_name = 'Costner';
 #22
 -- SELECT COUNT(DISTINCT country) FROM country;
 #23
